@@ -13,7 +13,7 @@ RUN apt update && \
     apt install -y nodejs && \
     npm install -g configurable-http-proxy && \
     pip3 install --upgrade pip && \
-    pip install dotenv
+    pip install dotenv jupyterlab jupyter_server
 
 # 管理者ユーザー作成
 RUN useradd -m ${ADMIN_USER} && \

@@ -9,6 +9,7 @@ services:
     volumes:
       - ./start.sh:/app/start.sh 
       - ./.env:/app/.env
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
       - ./notebooks:/app/notebooks
     ports:
       - "8001:8000"
