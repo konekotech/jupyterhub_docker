@@ -11,7 +11,9 @@ RUN apt update && \
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt remove -y libnode-dev && \
     apt install -y nodejs && \
-    npm install -g configurable-http-proxy
+    npm install -g configurable-http-proxy && \
+    pip3 install --upgrade pip && \
+    pip install dotenv
 
 # 管理者ユーザー作成
 RUN useradd -m ${ADMIN_USER} && \
