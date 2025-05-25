@@ -1,0 +1,15 @@
+services:
+  jupyterhub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ADMIN_USER: ${ADMIN_USER}
+        ADMIN_PASS: ${ADMIN_PASS}
+    volumes:
+      - ./start.sh:/app/start.sh 
+      - ./.env:/app/.env
+      - ./notebooks:/app/notebooks
+    ports:
+      - "8001:8000"
+    command: "sh -c 'chmod +x /app/start.sh && /app/start.sh'"
